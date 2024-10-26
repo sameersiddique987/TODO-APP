@@ -2,11 +2,11 @@ function renderTodo() {
 
     div.innerHTML= ""
     for (let i = 0; i < arr.length; i++) {
-        div.innerHTML += ` <div class="container border p-4 rounded mt-2 d-flex justify-content-end  align-items-start  mt-3">
-        <div><h1>${arr[i]}</h1></div>
+        div.innerHTML += ` <div class="container border p-3 rounded mt-2 d-flex justify-content-between  align-items-start   mt-3">
+         <div><h1>${arr[i]}</h1></div>
         
-        <div>
-        <button onclick="deleteTodo(${i})"  type="button" class="btn btn-danger "><i class="fa-solid fa-trash"></i></button>
+         <div class="pt-2">
+        <button onclick="deleteTodo(${i})"  type="button" class="btn btn-danger  "><i class="fa-solid fa-trash"></i></button>
         
         <button onclick="editTodo(${i})" type="button" class="btn btn-warning "><i class="fa-regular fa-pen-to-square"></i></button>
         </div>
@@ -43,14 +43,10 @@ function deleteTodo(index) {
 }
 
 function editTodo(index) {
-const updatedVal = prompt("enter updated walue")
+const updatedVal = prompt("Enter updated value")
 arr.splice(index , 1 , updatedVal)
 renderTodo()
 }
-
-
-
-
 
 
 
